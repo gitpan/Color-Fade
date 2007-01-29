@@ -1,0 +1,6 @@
+Revision history for Perl extension Color::Fade.
+
+0.01  Wed Jan 24 21:05:18 2007
+	- original version; created by h2xs 1.23 with options
+		-X -n Color::Fade
+
