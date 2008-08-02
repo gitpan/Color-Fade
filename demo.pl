@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 use lib "./lib";
-use Color::Fade qw(color_fade format_html format_css format_ubb format_aim);
+use Color::Fade qw(color_fade format_color);
 
 print "Choose output HTML file to write to [./demo.html] ";
 chomp (my $page = <STDIN>);
@@ -16,7 +16,7 @@ print OUT "<body bgcolor=\"#000000\">\n";
 # String: The quick brown fox jumps over the lazy dog.
 # Colors: Red, Green, Blue
 print OUT "<font color=\"#FFFFFF\"><u>Demo 1: Using <b>format_html()</b> to generate &lt;font&gt; tags.</u></font><p>\n";
-print OUT format_html (
+print OUT format_color ('html',
 	color_fade (
 		"The quick brown fox jumps over the lazy dog.",
 		'#FF0000',
@@ -30,7 +30,7 @@ print OUT "<p>\n";
 # String: Jackdaws love my big sphynx of quartz.
 # Colors: Cyan, Yellow, Magenta
 print OUT "<span style=\"color: #FFFFFF\"><u>Demo 2: Using <b>format_css()</b> to generate HTML 4 compliant &lt;span&gt; tags.</u></span><p>\n";
-print OUT format_css (
+print OUT format_color ('css',
 	color_fade (
 		'Jackdaws love my big sphynx of quartz.',
 		'#00FFFF',
@@ -44,7 +44,7 @@ print OUT "<p>\n\n<span style=\"color: #FFFFFF\"><u>More Demonstrations</u></spa
 # Demo 3: Just another example.
 # String: Just another Perl hacker.
 # Colors: pink, light blue
-print OUT format_html (
+print OUT format_color ('html',
 	color_fade (
 		'Just another Perl hacker.',
 		'#FF99FF',
@@ -57,7 +57,7 @@ print OUT "<p>";
 # Demo 4: Yet another example.
 # String: something very long
 # Colors: rainbow
-print OUT format_html (
+print OUT format_color ('html',
 	color_fade (
 		'And as this paragraph shows, the module can support strings of any length you want, and '
 		. 'can fade that string using as many different colors as you want. This one uses all the '
